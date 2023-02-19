@@ -1,31 +1,37 @@
-/* body {
+:root {
+    --card-background-color: #3C4048;
+    --card-title-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
     padding: 0;
     margin: 0;
-} */
+    box-sizing: border-box;
+}
 
 .card {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 200px;
+    height: 360px;
+    width: 320px;
     border: solid 1px black;
     border-radius: 10%;
-    background-color: purple;
+    background-color: var(--card-background-color);
 }
 
 .card-title {
     display: flex;
     justify-content: center;
-}
-
-.card-image {
-    display: flex;
-    justify-content: center;
-}
-
-.card-title,
-.card-image {
+    align-items: center;
+    height: 50px;
     color: white;
     font-size: 1.5rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--card-title-font);
+
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
