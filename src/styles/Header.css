@@ -1,0 +1,12 @@
+.header-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.scoreboard-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+    flex: 1;
+}
