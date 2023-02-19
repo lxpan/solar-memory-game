@@ -1,0 +1,13 @@
+.app-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10vh 60vh;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-rows: 300px;
+    grid-row-gap: 20px;
+    grid-column-gap: 40px;
+    grid-template-columns: repeat(auto-fill, 200px);
+}

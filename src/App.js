@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import Card from './components/Card';
-import ScoreBoard from './components/ScoreBoard';
 import './App.css';
 
 function App() {
+    const numCards = 12;
+
     return (
-        <div>
-            <h2>Something Something Memory Game</h2>
-            <ScoreBoard />
-            <Card />
+        <div className="app-container">
+            <div className="card-grid">
+                {Array.from(Array(numCards).keys()).map((i) => (
+                    <Card key={i} />
+                ))}
+            </div>
         </div>
     );
 }
