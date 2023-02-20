@@ -1,4 +1,4 @@
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage, useGLTF } from '@react-three/drei';
 import '../styles/Card.css';
@@ -152,8 +152,16 @@ export default function Card(props) {
     const { cardName } = props;
     const ref = useRef();
 
+    const [isHover, setIsHover] = useState(false);
+
+    const orbitalProps = isHover ? { ref, autoRotate: true } : { ref, autoRotate: false };
+
     return (
-        <div className="card">
+        <div
+            className="card"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+        >
             <div className="card-title">{cardName[0].toUpperCase() + cardName.substring(1)}</div>
 
             <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
@@ -168,7 +176,7 @@ export default function Card(props) {
                         <Model planetName={cardName} />
                     </Stage>
                 </Suspense>
-                <OrbitControls ref={ref} />
+                <OrbitControls {...orbitalProps} />
             </Canvas>
         </div>
     );
