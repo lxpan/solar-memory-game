@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Card from './components/Card';
 import Header from './components/Header';
 import './App.css';
+import bgImg from './assets/images/milkyway-bg.jpg';
 
 const PLANETS = [
     'venus',
@@ -21,6 +22,7 @@ function App() {
 
     return (
         <div className="app-container">
+            <img className="galaxy-bg" src={bgImg} alt="" />
             <Header title={appTitle} />
             <div className="card-grid">
                 {PLANETS.map((planet) => (
