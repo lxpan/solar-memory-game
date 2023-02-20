@@ -1,6 +1,8 @@
 import React, { Suspense, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stage, useGLTF } from '@react-three/drei';
+import { Canvas, useThree } from '@react-three/fiber';
+import {
+    OrbitControls, OrthographicCamera, Stage, useGLTF,
+} from '@react-three/drei';
 import '../styles/Card.css';
 
 // planet model imports
@@ -155,6 +157,8 @@ export default function Card(props) {
     const [isHover, setIsHover] = useState(false);
 
     const orbitalProps = isHover ? { ref, autoRotate: true } : { ref, autoRotate: false };
+    const cameraProps =
+        cardName === 'saturn' ? { fov: 50, position: [0, 15, 30], zoom: 1.05 } : { fov: 50 };
 
     return (
         <div
@@ -164,7 +168,7 @@ export default function Card(props) {
         >
             <div className="card-title">{cardName[0].toUpperCase() + cardName.substring(1)}</div>
 
-            <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+            <Canvas shadows dpr={[1, 2]} camera={cameraProps}>
                 <Suspense fallback={null}>
                     <Stage
                         controls={ref}
