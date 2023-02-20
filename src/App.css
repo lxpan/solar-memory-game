@@ -5,8 +5,8 @@ body {
 }
 
 .app-container {
-    width: 90vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-rows: 10vh 60vh;
     margin: 25px;
@@ -14,8 +14,8 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-rows: 400px;
+    grid-template-rows: 324px;
     grid-row-gap: 20px;
     grid-column-gap: 40px;
-    grid-template-columns: repeat(auto-fill, 320px);
+    grid-template-columns: repeat(auto-fill, 288px);
 }
