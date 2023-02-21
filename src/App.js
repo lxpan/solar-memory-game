@@ -50,7 +50,7 @@ function App() {
             <Header title={appTitle} />
             <div className="card-grid">
                 {planetsArray.map((planet) => (
-                    <Card key={planet} cardName={planet} />
+                    <Card key={planet} cardName={planet} randomiseCards={randomiseCards} />
                 ))}
             </div>
         </div>

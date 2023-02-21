@@ -151,7 +151,7 @@ function Model(props) {
 }
 
 export default function Card(props) {
-    const { cardName } = props;
+    const { cardName, randomiseCards } = props;
     const ref = useRef();
 
     const [isHover, setIsHover] = useState(false);
@@ -165,6 +165,7 @@ export default function Card(props) {
             className="card"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
+            onClick={randomiseCards}
         >
             <div className="card-title">{cardName[0].toUpperCase() + cardName.substring(1)}</div>
 
