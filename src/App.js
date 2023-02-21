@@ -20,7 +20,7 @@ function App() {
     ]);
     const [cardsClicked, setCardsClicked] = useState(new Set());
     const [score, setScore] = useState(0);
-    const [highScore, setHighScore] = useState(null);
+    const [highScore, setHighScore] = useState(0);
 
     // Fisher-Yates algorithm
     const shuffleArray = (array) => {
@@ -44,6 +44,14 @@ function App() {
     function handleCardClick(cardTitle) {
         if (cardsClicked.has(cardTitle)) {
             console.log(`Card: ${cardTitle} already seen!`);
+
+            // check if new high score achieved
+            if (score > highScore) {
+                setHighScore(score);
+            }
+            // reset game states after game is over
+            setScore(0);
+            setCardsClicked(new Set());
         }
         else {
             const oldSet = cardsClicked;
@@ -68,7 +76,7 @@ function App() {
     return (
         <div className="app-container">
             <img className="galaxy-bg" src={bgImg} alt="" />
-            <Header title={appTitle} score={score} />
+            <Header title={appTitle} score={score} highScore={highScore} />
             <div className="card-grid">
                 {planetsArray.map((planet) => (
                     <Card
