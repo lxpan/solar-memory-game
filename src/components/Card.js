@@ -184,11 +184,9 @@ export default function Card(props) {
             await sleep(sleepTime);
             cardDiv.classList.remove('card-clicked-incorrect');
         }
-
+        setIsClicked(false);
         handleCardClick(cardName);
         randomiseCards();
-
-        setIsClicked(false);
     }
 
     return (
