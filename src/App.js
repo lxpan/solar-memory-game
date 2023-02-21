@@ -30,9 +30,18 @@ function App() {
         return array;
     };
 
+    function randomiseCards() {
+        const cardGrid = document.querySelector('.card-grid');
+        const cardsArray = Array.from(document.querySelectorAll('.card'));
+        const cardsArrayShuffled = shuffleArray(cardsArray);
+
+        cardsArrayShuffled.forEach((card) => cardGrid.appendChild(card));
+    }
+
     useEffect(() => {
         // randomise planets state and trigger re-render on component load
-        setPlanetsArray(structuredClone(shuffleArray(planetsArray)));
+        // setPlanetsArray(structuredClone(shuffleArray(planetsArray)));
+        randomiseCards();
     }, []);
 
     return (
@@ -40,6 +49,7 @@ function App() {
             <img className="galaxy-bg" src={bgImg} alt="" />
             <Header title={appTitle} />
             <div className="card-grid">
+                <button onClick={randomiseCards}>Randomise</button>
                 {planetsArray.map((planet) => (
                     <Card key={planet} cardName={planet} />
                 ))}
