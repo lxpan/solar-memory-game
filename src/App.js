@@ -49,7 +49,6 @@ function App() {
             <img className="galaxy-bg" src={bgImg} alt="" />
             <Header title={appTitle} />
             <div className="card-grid">
-                <button onClick={randomiseCards}>Randomise</button>
                 {planetsArray.map((planet) => (
                     <Card key={planet} cardName={planet} />
                 ))}
