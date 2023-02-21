@@ -156,8 +156,10 @@ export default function Card(props) {
     } = props;
     const ref = useRef();
     const [isHover, setIsHover] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
 
-    const orbitalProps = isHover ? { ref, autoRotate: true } : { ref, autoRotate: false };
+    const orbitalProps =
+        isHover || isClicked ? { ref, autoRotate: true } : { ref, autoRotate: false };
     const cameraProps =
         cardName === 'saturn' ? { fov: 50, position: [0, 15, 30], zoom: 1.05 } : { fov: 50 };
 
@@ -168,6 +170,8 @@ export default function Card(props) {
     async function clickEvents(evt) {
         const cardDiv = evt.currentTarget;
         const clickedBefore = hasCardBeenClickedBefore(evt.currentTarget.id);
+
+        setIsClicked(true);
 
         if (!clickedBefore) {
             cardDiv.classList.add('card-clicked-correct');
@@ -182,6 +186,8 @@ export default function Card(props) {
 
         handleCardClick(cardName);
         randomiseCards();
+
+        setIsClicked(false);
     }
 
     return (
