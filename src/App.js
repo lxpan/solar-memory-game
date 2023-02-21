@@ -18,6 +18,9 @@ function App() {
         'neptune',
         'pluto',
     ]);
+    const [cardsClicked, setCardsClicked] = useState(new Set());
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(null);
 
     // Fisher-Yates algorithm
     const shuffleArray = (array) => {
@@ -38,19 +41,43 @@ function App() {
         cardsArrayShuffled.forEach((card) => cardGrid.appendChild(card));
     }
 
+    function handleCardClick(cardTitle) {
+        if (cardsClicked.has(cardTitle)) {
+            console.log(`Card: ${cardTitle} already seen!`);
+        }
+        else {
+            const oldSet = cardsClicked;
+            oldSet.add(cardTitle);
+            //
+            setCardsClicked(new Set(oldSet));
+            setScore(score + 1);
+        }
+    }
+
     useEffect(() => {
         // randomise planets state and trigger re-render on component load
         // setPlanetsArray(structuredClone(shuffleArray(planetsArray)));
         randomiseCards();
     }, []);
 
+    useEffect(() => {
+        console.log(`Cards clicked: ${Array.from(cardsClicked).join(', ')}`);
+        console.log(`Score: ${score}`);
+    }, [cardsClicked, score]);
+
     return (
         <div className="app-container">
             <img className="galaxy-bg" src={bgImg} alt="" />
-            <Header title={appTitle} />
+            <Header title={appTitle} score={score} />
             <div className="card-grid">
                 {planetsArray.map((planet) => (
-                    <Card key={planet} cardName={planet} randomiseCards={randomiseCards} />
+                    <Card
+                        key={planet}
+                        cardName={planet}
+                        randomiseCards={randomiseCards}
+                        handleCardClick={handleCardClick}
+                        cardsClicked={cardsClicked}
+                    />
                 ))}
             </div>
         </div>

@@ -151,21 +151,28 @@ function Model(props) {
 }
 
 export default function Card(props) {
-    const { cardName, randomiseCards } = props;
+    const {
+        cardName, randomiseCards, handleCardClick, cardsClicked,
+    } = props;
     const ref = useRef();
-
     const [isHover, setIsHover] = useState(false);
 
     const orbitalProps = isHover ? { ref, autoRotate: true } : { ref, autoRotate: false };
     const cameraProps =
         cardName === 'saturn' ? { fov: 50, position: [0, 15, 30], zoom: 1.05 } : { fov: 50 };
 
+    const clickEvents = (evt) => {
+        handleCardClick(cardName);
+        randomiseCards();
+    };
+
     return (
         <div
             className="card"
+            id={cardName}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            onClick={randomiseCards}
+            onClick={(evt) => clickEvents(evt)}
         >
             <div className="card-title">{cardName[0].toUpperCase() + cardName.substring(1)}</div>
 
