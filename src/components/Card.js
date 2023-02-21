@@ -152,7 +152,7 @@ function Model(props) {
 
 export default function Card(props) {
     const {
-        cardName, randomiseCards, handleCardClick, cardsClicked,
+        cardName, randomiseCards, handleCardClick, hasCardBeenClickedBefore,
     } = props;
     const ref = useRef();
     const [isHover, setIsHover] = useState(false);
@@ -161,10 +161,28 @@ export default function Card(props) {
     const cameraProps =
         cardName === 'saturn' ? { fov: 50, position: [0, 15, 30], zoom: 1.05 } : { fov: 50 };
 
-    const clickEvents = (evt) => {
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function clickEvents(evt) {
+        const cardDiv = evt.currentTarget;
+        const clickedBefore = hasCardBeenClickedBefore(evt.currentTarget.id);
+
+        if (!clickedBefore) {
+            cardDiv.classList.add('card-clicked-correct');
+            await sleep(1000);
+            cardDiv.classList.remove('card-clicked-correct');
+        }
+        else if (clickedBefore) {
+            cardDiv.classList.add('card-clicked-incorrect');
+            await sleep(1000);
+            cardDiv.classList.remove('card-clicked-incorrect');
+        }
+
         handleCardClick(cardName);
         randomiseCards();
-    };
+    }
 
     return (
         <div

@@ -62,6 +62,13 @@ function App() {
         }
     }
 
+    function hasCardBeenClickedBefore(cardTitle) {
+        if (cardsClicked.has(cardTitle)) {
+            return true;
+        }
+        return false;
+    }
+
     useEffect(() => {
         // randomise planets state and trigger re-render on component load
         // setPlanetsArray(structuredClone(shuffleArray(planetsArray)));
@@ -69,8 +76,8 @@ function App() {
     }, []);
 
     useEffect(() => {
-        console.log(`Cards clicked: ${Array.from(cardsClicked).join(', ')}`);
-        console.log(`Score: ${score}`);
+        // console.log(`Cards clicked: ${Array.from(cardsClicked).join(', ')}`);
+        // console.log(`Score: ${score}`);
     }, [cardsClicked, score]);
 
     return (
@@ -84,7 +91,7 @@ function App() {
                         cardName={planet}
                         randomiseCards={randomiseCards}
                         handleCardClick={handleCardClick}
-                        cardsClicked={cardsClicked}
+                        hasCardBeenClickedBefore={hasCardBeenClickedBefore}
                     />
                 ))}
             </div>

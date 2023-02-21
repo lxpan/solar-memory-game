@@ -24,6 +24,14 @@ body {
     box-shadow: 0 0 15px 5px var(--card-hover-color);
 }
 
+.card-clicked-correct {
+    border: dotted greenyellow 8px;
+}
+
+.card-clicked-incorrect {
+    border: dotted red 8px;
+}
+
 .card-title {
     display: flex;
     justify-content: center;
@@ -39,4 +47,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px -10px #aef4af;
+    }
+
+    to {
+        box-shadow: 0 0 10px 10px #aef4af;
+    }
 }

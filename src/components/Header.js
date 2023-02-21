@@ -4,7 +4,6 @@ import '../styles/Header.css';
 
 export default function Header(props) {
     const { title, score, highScore } = props;
-    console.log(`header score ${score}`);
 
     return (
         <div className="header-container">
