@@ -170,17 +170,18 @@ export default function Card(props) {
     async function clickEvents(evt) {
         const cardDiv = evt.currentTarget;
         const clickedBefore = hasCardBeenClickedBefore(evt.currentTarget.id);
+        const sleepTime = 1000;
 
         setIsClicked(true);
 
         if (!clickedBefore) {
             cardDiv.classList.add('card-clicked-correct');
-            await sleep(1000);
+            await sleep(sleepTime);
             cardDiv.classList.remove('card-clicked-correct');
         }
         else if (clickedBefore) {
             cardDiv.classList.add('card-clicked-incorrect');
-            await sleep(1000);
+            await sleep(sleepTime);
             cardDiv.classList.remove('card-clicked-incorrect');
         }
 
