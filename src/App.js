@@ -18,7 +18,7 @@ const PLANETS = [
 ];
 
 function App() {
-    const appTitle = 'The Many Moons Memory Game';
+    const appTitle = 'Solar System Memory Game';
 
     return (
         <div className="app-container">
