@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.ed0cd369.css",
+    "main.js": "/memory-game/static/js/main.75cb3852.js",
+    "static/media/earth.glb": "/memory-game/static/media/earth.13f83e58751c4a920cc1.glb",
+    "static/media/jupiter.glb": "/memory-game/static/media/jupiter.96f04016208d546eab29.glb",
+    "static/media/pluto.glb": "/memory-game/static/media/pluto.9ad74ba8cf794a591ab4.glb",
+    "static/media/saturn.glb": "/memory-game/static/media/saturn.3232be7b112d2715ed9f.glb",
+    "static/media/mars.glb": "/memory-game/static/media/mars.1caeb6ec6986e295961f.glb",
+    "static/media/moon.glb": "/memory-game/static/media/moon.5ce1e55ac34927e32ddf.glb",
+    "static/media/mercury.glb": "/memory-game/static/media/mercury.54901aa2c57d5836e91e.glb",
+    "static/media/milkyway-bg.jpg": "/memory-game/static/media/milkyway-bg.71a297fd704798a573d2.jpg",
+    "static/media/neptune.glb": "/memory-game/static/media/neptune.eae6183453ff89de5e28.glb",
+    "static/media/venus.glb": "/memory-game/static/media/venus.b5140d4cd8e261a3801f.glb",
+    "static/media/uranus.glb": "/memory-game/static/media/uranus.62eaa1725236a1d68e1f.glb",
+    "index.html": "/memory-game/index.html",
+    "main.ed0cd369.css.map": "/memory-game/static/css/main.ed0cd369.css.map",
+    "main.75cb3852.js.map": "/memory-game/static/js/main.75cb3852.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed0cd369.css",
+    "static/js/main.75cb3852.js"
+  ]
+}
