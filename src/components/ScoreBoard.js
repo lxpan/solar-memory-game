@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default function ScoreBoard(props) {
-    const { score } = props;
+    const { score, highScore } = props;
 
     return (
         <div>
             <div>Score: {score}</div>
-            <div>High Score: X</div>
+            <div>High Score: {highScore}</div>
         </div>
     );
 }

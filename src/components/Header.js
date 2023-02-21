@@ -10,7 +10,7 @@ export default function Header(props) {
         <div className="header-container">
             <h2 className="header-title">{title}</h2>
             <div className="scoreboard-container">
-                <ScoreBoard score={score} />
+                <ScoreBoard score={score} highScore={highScore} />
             </div>
         </div>
     );
