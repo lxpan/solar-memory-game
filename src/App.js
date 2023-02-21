@@ -6,6 +6,8 @@ import bgImg from './assets/images/milkyway-bg.jpg';
 
 function App() {
     const appTitle = 'Solar System Memory Game';
+    const howToPlayText =
+        'Score points by clicking on the cards, but don\'t click on any card more than once!';
     const [planetsArray, setPlanetsArray] = useState([
         'venus',
         'mercury',
@@ -83,7 +85,12 @@ function App() {
     return (
         <div className="app-container">
             <img className="galaxy-bg" src={bgImg} alt="" />
-            <Header title={appTitle} score={score} highScore={highScore} />
+            <Header
+                title={appTitle}
+                howToPlayText={howToPlayText}
+                score={score}
+                highScore={highScore}
+            />
             <div className="card-grid">
                 {planetsArray.map((planet) => (
                     <Card
