@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/memory-game/static/css/main.ed0cd369.css",
-    "main.js": "/memory-game/static/js/main.75cb3852.js",
+    "main.js": "/memory-game/static/js/main.bcc73618.js",
     "static/media/earth.glb": "/memory-game/static/media/earth.13f83e58751c4a920cc1.glb",
     "static/media/jupiter.glb": "/memory-game/static/media/jupiter.96f04016208d546eab29.glb",
     "static/media/pluto.glb": "/memory-game/static/media/pluto.9ad74ba8cf794a591ab4.glb",
@@ -15,10 +15,10 @@
     "static/media/uranus.glb": "/memory-game/static/media/uranus.62eaa1725236a1d68e1f.glb",
     "index.html": "/memory-game/index.html",
     "main.ed0cd369.css.map": "/memory-game/static/css/main.ed0cd369.css.map",
-    "main.75cb3852.js.map": "/memory-game/static/js/main.75cb3852.js.map"
+    "main.bcc73618.js.map": "/memory-game/static/js/main.bcc73618.js.map"
   },
   "entrypoints": [
     "static/css/main.ed0cd369.css",
-    "static/js/main.75cb3852.js"
+    "static/js/main.bcc73618.js"
   ]
 }
