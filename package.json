@@ -2,7 +2,7 @@
     "name": "memory-game",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://lxpan.github.io/memory-game",
+    "homepage": "http://lxpan.github.io/solar-memory-game",
     "dependencies": {
         "@react-three/drei": "^9.56.25",
         "@react-three/fiber": "^8.11.2",
